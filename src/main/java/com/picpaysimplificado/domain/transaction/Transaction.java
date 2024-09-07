@@ -2,10 +2,7 @@ package com.picpaysimplificado.domain.transaction;
 
 import com.picpaysimplificado.domain.user.User;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -15,6 +12,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Transaction {
 
@@ -31,6 +29,6 @@ public class Transaction {
     @ManyToOne
     @JoinColumn(name = "receiver_id")
     private User receiver;
-    
+
     private LocalDateTime timeStamp;
 }
